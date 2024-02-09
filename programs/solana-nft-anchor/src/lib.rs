@@ -9,7 +9,7 @@ use anchor_spl::{
 };
 use mpl_token_metadata::{
     pda::{find_master_edition_account, find_metadata_account},
-    state::DataV2 
+    state::DataV2,
 };
 
 declare_id!("87nxwBHFLnxF3VFvAJi4yAtDgZX7mN3uLcrwek82ADNd");
@@ -46,7 +46,6 @@ pub mod solana_nft_anchor {
             },
         );
 
-        
 
         let data_v2 = DataV2 {
             name: name,
@@ -57,6 +56,7 @@ pub mod solana_nft_anchor {
             collection: None,
             uses: None,
         };
+        
         create_metadata_accounts_v3(cpi_context, data_v2, false, true, None)?;
 
           //create master edition account
